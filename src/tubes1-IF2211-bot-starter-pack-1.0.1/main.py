@@ -8,12 +8,14 @@ from game.bot_handler import BotHandler
 from game.logic.random import RandomLogic
 from game.util import *
 from game.logic.base import BaseLogic
+from game.logic.BawastubBot import BawastubBot
 
 init()
 BASE_URL = "http://localhost:3000/api"
 DEFAULT_BOARD_ID = 1
 CONTROLLERS = {
     "Random": RandomLogic,
+    "BawastubBot": BawastubBot
 }
 
 ###############################################################################
@@ -182,7 +184,6 @@ while True:
             "Invalid move will be ignored."
             + f" Your move: ({delta_x}, {delta_y}). Your position: ({board_bot.position.x}, {board_bot.position.y})",
         )
-        sleep(1)
         continue
 
     try:
